@@ -1,0 +1,54 @@
+html {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    font-family: 'MedievalSharp', cursive;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    margin: 0 auto;
+    font-size: 6rem;
+    color: green;
+}
+
+h2 {
+    margin: auto;
+    font-size: 3rem;
+}
+
+input {
+    font-size: 1.45rem;
+}
+
+input[type="checkbox"] {
+    transform: scale(2.25);
+    vertical-align: middle;
+    margin-left: 7.5px;
+}
+#formContainer {
+    max-width: 50%;
+    padding: 3em;
+    border: 2px solid white;
+    margin: auto;
+}
+
+#bookEntryForm {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-size: 3rem;
+    line-height: 1.75em;
+    text-align: left;
+    border: 2px solid pink;
+}
+
+#formSubmitBtn {
+    font-size: 1.5rem;
+    margin: auto;
+}
