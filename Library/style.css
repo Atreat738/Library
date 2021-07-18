@@ -4,8 +4,7 @@ html {
 
 body {
     display: flex;
-    justify-self: center;
-    flex-direction: column;
+    flex-direction: row;
     font-family: 'MedievalSharp', cursive;
     background-color: black;
     color: white;
@@ -32,10 +31,12 @@ input[type="checkbox"] {
     margin-left: 7.5px;
 }
 #formContainer {
-    max-width: 50%;
+    height: 100%;
+    max-width: 30%;
     padding: 3em;
     border: 2px solid white;
-    margin: auto;
+    margin: 0 auto auto 0;
+
 }
 
 #bookEntryForm {
@@ -51,4 +52,21 @@ input[type="checkbox"] {
 #formSubmitBtn {
     font-size: 1.5rem;
     margin: auto;
+}
+
+.table {
+    width: 30%;
+    margin: 0 20px auto auto;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.table > thead {
+    border-bottom: 2px solid white;
+}
+
+.deleteButton {
+    display: inline-block;
+    background-color: red;
+    color: white;
 }

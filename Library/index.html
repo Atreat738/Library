@@ -9,8 +9,8 @@
     <title>Library</title>
 </head>
 <body>
-    <h1>Library</h1>
-    <div id= "formContainer">
+
+    <div id = "formContainer">
         <form id = "bookEntryForm">
             <h2>Add New Book</h2>
             <label for = "BookTitle">
@@ -24,10 +24,28 @@
             </label>
             <label for = "Read">Read?
                 <input type="checkbox" id="Read" name="Read">
-            </label>
-            <button id = "formSubmitBtn">Add Book</button>
+            </label>            
         </form>
+        <button id = "formSubmitBtn">Add Book</button>
     </div>
+
+    <h1>Library</h1>
+
+    <table class = "table table-striped">
+        <thead id = "thead">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id = "book-list">
+
+        </tbody>
+    </table>
+
     <script src = "app.js"></script>
 </body>
 </html>
