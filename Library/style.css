@@ -67,6 +67,7 @@ input[type="checkbox"] {
 
 .deleteButton {
     display: inline-block;
+    font-size: 1.1rem;
     background-color: red;
     color: white;
 }

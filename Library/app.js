@@ -5,9 +5,10 @@ const readInput = document.querySelector('#Read');
 const bookList = document.querySelector('#book-list');
 
 const addBookButton = document.querySelector('#formSubmitBtn'); 
+const deleteBookButton = document.querySelectorAll('.deleteButton');
 
-const theHobbit = new Book('The Hobbit', 'JRR Tolken', 295, false);
-const underTheDome = new Book('Under The Dome', 'Stephen King', 1005, true);
+const theHobbit = new Book('The Hobbit', 'JRR Tolken', 295, 'No');
+const underTheDome = new Book('Under The Dome', 'Stephen King', 1005, 'Yes');
 
 let myLibrary = [theHobbit, underTheDome];
 displayBook();
@@ -20,25 +21,23 @@ function Book(title, author, pages, read) {
 }
 
 //Create a function that stores input into myLibrary Array
-
 function addBookToLibrary() {
     let title = bookTitleInput.value;
     let author = authorInput.value;
     let pages = pagesInput.value;
-    let read = readInput.value;
-    //console.log(read);
+    let read = checkReadStatus(readInput);
     let newBook = new Book(title, author, pages, read);
     console.log(newBook);
     console.log(myLibrary);
+    myLibrary.push(newBook); 
     displayBook();
     clearForm();
-    return myLibrary.push(newBook); 
 }
 
 function checkReadStatus(readInput) {
-    if(readInput.value == 'on') {
+    if (readInput.checked == true) {
         return read = 'Yes';
-    } else if (readInput.value == 'off') {
+    } else if (readInput.checked == false) {
         return read = 'No';
     }
 }
@@ -55,9 +54,8 @@ addBookButton.addEventListener('click', addBookToLibrary);
 //forEach book in myLibrary
 //display book in table
 function displayBook() {
+    bookList.innerText = "";
     myLibrary.forEach(function(Book) {
-        //if the book is currently displayed, do not display book again(may need to revisit appendChild usage)
-        if(Book != "") {
             //display the book.title 
             let displayRow = document.createElement('tr');
             displayRow.textContent = Book.title;
@@ -72,7 +70,6 @@ function displayBook() {
             displayRow.appendChild(displayPages);
             //display read status
             let displayRead = document.createElement('td');
-            checkReadStatus(readInput);
             displayRead.textContent = Book.read;
             displayRow.appendChild(displayRead);
             //display delete button
@@ -80,13 +77,23 @@ function displayBook() {
             deleteButton.textContent = 'Delete';
             deleteButton.classList.add('deleteButton');
             displayRow.appendChild(deleteButton);
-        }
-        console.log(Book);
+        
     });
 
 }
 
 
+// function deleteBook(currentBook) {
+//     currentBook = this.Book;  
+//     console.log(currentBook);
+//     this.title = null;
+//     this.author = null;
+//     this.pages = null;
+//     this.read = null;
+//     this.deleteButton = null;
+// }
+
+// deleteBookButton.addEventListener('click', deleteBook);
 
 // function checkbox() {
 //     let checked = false;
