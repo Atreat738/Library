@@ -90,13 +90,16 @@ function displayBook() {
     });
 }
 
-//Will fix this once I read up on prototypes again
  Book.prototype.toggleRead = function(currentBook) {
     if(currentBook.classList.contains('readButton')) {
-            if(Book.read == 'yes') {
-                return Book.read = 'No'; 
-            } else if (Book.read == 'No') {
-                return Book.read = 'Yes';
+            if(currentBook.classList.contains('readYesButton')) {
+                currentBook.classList.remove('readYesButton');
+                currentBook.textContent = 'No';
+                return currentBook.classList.add('readNoButton'); 
+            } else if (currentBook.classList.contains('readNoButton')) {
+                currentBook.classList.remove('readNoButton');
+                currentBook.textContent = 'Yes';
+                return currentBook.classList.add('readYesButton'); 
         }
     }
  }
