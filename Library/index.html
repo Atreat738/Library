@@ -9,42 +9,48 @@
     <title>Library</title>
 </head>
 <body>
+    <div id="container">
 
-    <div id = "formContainer">
-        <form id = "bookEntryForm">
-            <h2>Add New Book</h2>
-            <label for = "BookTitle">
-                <input type="text" id="BookTitle" name="BookTitle" placeholder="Title">
-            </label>
-            <label for = "Author">
-                <input type="text" id="Author" name="Author" placeholder="Author">
-            </label>
-            <label for = "Pages">
-                <input type="text" id="Pages" name="Pages" placeholder="Pages">
-            </label>
-            <label for = "Read">Read?
-                <input type="checkbox" id="Read" name="Read">
-            </label>            
-        </form>
-        <button id = "formSubmitBtn">Add Book</button>
+        <div id = "formContainer">
+
+        <h1>Library</h1>
+
+            <form id = "bookEntryForm">
+                <h2>Add New Book</h2>
+                <label for = "BookTitle">
+                    <input type="text" id="BookTitle" name="BookTitle" placeholder="Title">
+                </label>
+                <label for = "Author">
+                    <input type="text" id="Author" name="Author" placeholder="Author">
+                </label>
+                <label for = "Pages">
+                    <input type="text" id="Pages" name="Pages" placeholder="Pages">
+                </label>
+                <label for = "Read">Read?
+                    <input type="checkbox" id="Read" name="Read">
+                </label>            
+            </form>
+            <button id = "formSubmitBtn">Add Book</button>
+        </div>
+    
+
+        <div id="tableContainer">
+            <table class = "table">
+                <thead id = "thead">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Read</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id = "book-list">
+                </tbody>
+            </table>
+        </div>
+
     </div>
-
-    <h1>Library</h1>
-
-    <table class = "table table-striped">
-        <thead id = "thead">
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Pages</th>
-                <th>Read</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody id = "book-list">
-
-        </tbody>
-    </table>
 
     <script src = "app.js"></script>
 </body>
